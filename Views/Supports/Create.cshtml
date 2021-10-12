@@ -1,0 +1,228 @@
+﻿@model DevProject.Models.Support
+
+@{
+    ViewBag.Title = "Create";
+    Layout = null; ;
+}
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Contact Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="~/Content/contact-form-09/contact-form-09/css/style.css">
+
+</head>
+<body>
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">Contact Page</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-md-12">
+                    <div class="wrapper">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 mb-5">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="dbox w-100 text-center">
+                                            <div class="icon d-flex align-items-center justify-content-center">
+                                                <span class="fa fa-map-marker"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p><span>Address:</span> 11, Banani, Dhaka</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="dbox w-100 text-center">
+                                            <div class="icon d-flex align-items-center justify-content-center">
+                                                <span class="fa fa-phone"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p><span>Phone:</span> <a href="tel://1234567920">+ 01733938543</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="dbox w-100 text-center">
+                                            <div class="icon d-flex align-items-center justify-content-center">
+                                                <span class="fa fa-paper-plane"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@jobfinder.com</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="contact-wrap">
+                                    <h3 class="mb-4 text-center">Get in touch with us</h3>
+                                    <div id="form-message-warning" class="mb-4 w-100 text-center"></div>
+                                    <div id="form-message-success" class="mb-4 w-100 text-center">
+                                        Your message was sent, thank you!
+                                    </div>
+                                    <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                    @*<div class="col-md-10">*@
+                                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                                    @*</div>*@
+                                                </div>
+
+                                                @*<div class="form-group">
+                                                        <input type="text" class="form-control" name="Name" id="Name" placeholder="Name">
+                                                    </div>*@
+                                            </div>
+                                            <div class="col-md-12">
+
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.EMAIL, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                    @*<div class="col-md-10">*@
+                                                    @Html.EditorFor(model => model.EMAIL, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.EMAIL, "", new { @class = "text-danger" })
+                                                    @*</div>*@
+                                                </div>
+
+
+                                                @*<div class="form-group">
+                                                        <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                                                    </div>*@
+                                            </div>
+                                            <div class="col-md-12">
+
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.Subject, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                    @*<div class="col-md-10">*@
+                                                    @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+                                                    @*</div>*@
+                                                </div>
+
+                                                @*<div class="form-group">
+                                                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+                                                    </div>*@
+                                            </div>
+                                            <div class="col-md-12">
+
+                                                @*<div class="form-group">*@
+
+                                                <div class="form-group mt-3">
+                                                    <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                                                </div>
+
+                                                @*<textarea name="message" class="form-control" id="message" cols="30" rows="8" placeholder="Message"></textarea>*@
+                                                @*@Html.LabelFor(model => model.Message, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                                                @*<div class="col-md-10">*@
+                                                @*@Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-control" } })*@
+                                                @*@Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })*@
+                                                @*</div>*@
+                                                @*</div>*@
+
+                                                @*<div class="form-group">
+                                                        <textarea name="message" class="form-control" id="message" cols="30" rows="8" placeholder="Message"></textarea>
+                                                    </div>*@
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    @*<div class="col-md-offset-2 col-md-10">*@
+                                                    <input type="submit" value="Create" class="btn btn-primary" />
+                                                    @*</div>*@
+                                                </div>
+
+
+                                                @*<div class="form-group">
+                                                        <input type="submit" value="Create" class="btn btn-primary">
+                                                        <div class="submitting"></div>
+                                                    </div>*@
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="~/Content/contact-form-09/contact-form-09/js/jquery.min.js"></script>
+    <script src="~/Content/contact-form-09/contact-form-09/js/popper.js"></script>
+    <script src="~/Content/contact-form-09/contact-form-09/js/bootstrap.min.js"></script>
+    <script src="~/Content/contact-form-09/contact-form-09/js/jquery.validate.min.js"></script>
+    <script src="~/Content/contact-form-09/contact-form-09/js/main.js"></script>
+
+</body>
+</html>
+
+
+
+
+@*<h2>Create</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>Support</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.EMAIL, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.EMAIL, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.EMAIL, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Subject, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Message, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@
